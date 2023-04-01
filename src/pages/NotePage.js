@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
-// import ArrowLeft  from '../assets/arrow-left.svg'
-// import { ReactComponent as ArrowLeft }  from '../assets/arrow-left.svg'
 
+
+const urlLink = "https://cotech-note-app-backend.onrender.com"
 const NotePage = ({ match, history }) => {
 
     let noteId = match.params.id
@@ -15,13 +15,13 @@ const NotePage = ({ match, history }) => {
 
       if(noteId === 'new') return
 
-      let response = await fetch(`/api/notes/${noteId}`)
+      let response = await fetch(`${urlLink}/api/notes/${noteId}`)
       let data = await response.json()
       setNote(data)
     }
 
     let createNote = async () => {
-      fetch("/api/note/create", {
+      fetch(`${urlLink}/api/note/create`, {
         method: "POST",
         headers: {
           'Content-Type': 'application/json'
@@ -31,7 +31,7 @@ const NotePage = ({ match, history }) => {
     }
 
     let updateNote = async () => {
-      fetch("/api/notes/"+noteId+"/update", {
+      fetch(`${urlLink}/api/notes/`+noteId+"/update", {
         method: "PUT",
         headers: {
           'Content-Type': 'application/json'
@@ -41,7 +41,7 @@ const NotePage = ({ match, history }) => {
     }
 
     let deleteNote = async() => {
-      fetch(`/api/notes/${noteId}/delete`, {
+      fetch(`${urlLink}/api/notes/${noteId}/delete`, {
         method: 'DELETE',
         headers:{
           'Content-Type': 'application/json'

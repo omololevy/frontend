@@ -12,7 +12,7 @@ const NotesListPage = () => {
     }, [])
 
     let getNotes = async () => {
-        let response = await fetch('/api/notes/')
+        let response = await fetch('https://cotech-note-app-backend.onrender.com/api/notes/')
 
         let data = await response.json()
         // console.log(data);
