@@ -4,10 +4,10 @@ import Header from './components/Header'
 import NotesListPage from './pages/NotesListPage'
 import NotePage from './pages/NotePage'
 
-function App() {
+function App(theme) {
   return (
     <Router>
-      <div className="container dark">
+      <div className={`${theme}`}>
         <div className='app'>
         <Header />
         <Route path="/" exact component={NotesListPage} />
