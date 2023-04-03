@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 
-const urlLink = "http://127.0.0.1:8000/"
-// const urlLink = "https://cotech-note-app-backend.onrender.com"
+// const urlLink = "http://127.0.0.1:8000/"
+const urlLink = "https://cotech-note-app-backend.onrender.com"
 const NotePage = ({ match, history }) => {
 
     let noteId = match.params.id
