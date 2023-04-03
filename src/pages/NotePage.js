@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 
-
-const urlLink = "https://cotech-note-app-backend.onrender.com"
+const urlLink = "http://127.0.0.1:8000/"
+// const urlLink = "https://cotech-note-app-backend.onrender.com"
 const NotePage = ({ match, history }) => {
 
     let noteId = match.params.id
@@ -65,10 +65,10 @@ const NotePage = ({ match, history }) => {
   return (
     <div className='note'>
       <div className='note-header'>
-        <h3>
+        
         <h1 className='back' onClick={handleSubmit} >&#8592;</h1>
         {/* <img src={ArrowLeft} onClick={handleSubmit} alt="arrowleft" /> */}
-        </h3>
+       
         {noteId !== 'new' ? (
           <button onClick={deleteNote}>Delete</button>
         ) : (
