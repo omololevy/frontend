@@ -51,7 +51,7 @@ const NotePage = ({ match, history }) => {
     }
 
     let handleSubmit = () => {
-      if (noteId !== 'new' || !note.body) {
+      if (noteId !== 'new' && !note.body) {
         deleteNote()
       } else if (noteId !== 'new') {
         updateNote()
